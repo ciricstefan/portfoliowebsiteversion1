@@ -38,6 +38,18 @@ function checkSection(scroll_pos) {
     let x = Math.floor(scroll_pos / (screenHeight/2));
     if(currentSection !== x) {
         // show section which index is same as x
-
+        chooseSection(x);
     }
+}
+
+function chooseSection(x) {
+    // set current section
+    currentSection = x;
+    // hide every project section using class hidden
+    for (var i = pageSections.length - 1; i >= 0; i--) {
+        pageSections[i].classList.add("hidden");
+    }
+    // show appropriate section
+    pageSections[x].classList.remove("hidden");
+    pageSections[x].classList.add("shown");
 }
