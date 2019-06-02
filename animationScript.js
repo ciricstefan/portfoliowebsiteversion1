@@ -49,6 +49,10 @@ function chooseSection(x) {
     for (var i = pageSections.length - 1; i >= 0; i--) {
         pageSections[i].classList.add("hidden");
     }
+    // set bg color on body from data-bgcolor attr
+    document.getElementById("body").style.background = pageSections[x].dataset.bgcolor;
+    // set text color from data attr
+    document.getElementById("body").style.color = pageSections[x].dataset.textcolor;
     // show appropriate section
     pageSections[x].classList.remove("hidden");
     pageSections[x].classList.add("shown");
