@@ -57,3 +57,12 @@ function chooseSection(x) {
     pageSections[x].classList.remove("hidden");
     pageSections[x].classList.add("shown");
 }
+
+// when user click arrow button, scroll till next section
+document.getElementById("down-arrow").addEventListener("click", function(el) {
+    window.scroll({
+       top: (screenHeight/2) + 100,
+       left: 0,
+       behavior: "smooth" 
+    });
+});
