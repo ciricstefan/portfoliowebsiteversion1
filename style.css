@@ -3,6 +3,7 @@
 }
 
 #body {
+    transition: all 0.5s ease;
     margin:0;
     padding:0;
     justify-content: center;
@@ -15,6 +16,7 @@
     width: 100%;
     max-width:1000px;
     height: 100vh;
+    transition: all 0.5s ease;
     flex-direction: column-reverse;
     justify-content: center;
 }
@@ -86,12 +88,20 @@
   
 }
 
+/* hidden and shown classes used in js to show and hide sections */
 .hidden {
     display: none;
+    -webkit-animation: fadeOut 0.5s /* Safari 4+ */;
+    -moz-animation:    fadeOut 0.5s /* Fx 5+ */;
+    -o-animation:      fadeOut 0.5s /* Opera 12+ */;
+    animation:         fadeOut 0.5s /* IE 10+, Fx 29+ */;
 }
 
 .shown {
-
+    -webkit-animation: fadeIn 0.5s /* Safari 4+ */;
+    -moz-animation:    fadeIn 0.5s /* Fx 5+ */;
+    -o-animation:      fadeIn 0.5s /* Opera 12+ */;
+    animation:         fadeIn 0.5s /* IE 10+, Fx 29+ */;
 }
 
 #down-arrow {
@@ -110,19 +120,55 @@
     0%   { top: 0; }
     50% { top:10px; }
     100% { top:0; }
-  }
-  @-moz-keyframes upDown {
+}
+@-moz-keyframes upDown {
     0%   { top: 0; }
     50% { top:10px; }
     100% { top:0; }
-  }
-  @-o-keyframes upDown {
+}
+@-o-keyframes upDown {
     0%   { top: 0; }
     50% { top:10px; }
     100% { top:0; }
-  }
-  @keyframes upDown {
+}
+@keyframes upDown {
     0%   { top: 0; }
     50% { top:10px; }
     100% { top:0; }
-  }
+}
+
+/* animation to fadein selected section for shown class */
+@-webkit-keyframes fadeIn {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+}
+@-moz-keyframes fadeIn {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+}
+@-o-keyframes fadeIn {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+}
+@keyframes fadeIn {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* animation to fadeout selected section for hidden class */
+@-webkit-keyframes fadeOut {
+    0%   { opacity: 1; }
+    100% { opacity: 0; }
+}
+@-moz-keyframes fadeOut {
+    0%   { opacity: 1; }
+    100% { opacity: 0; }
+}
+@-o-keyframes fadeOut {
+    0%   { opacity: 1; }
+    100% { opacity: 0; }
+}
+@keyframes fadeOut {
+    0%   { opacity: 1; }
+    100% { opacity: 0; }
+}
