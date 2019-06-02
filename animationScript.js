@@ -26,7 +26,7 @@ function checkScroll() {
 
     if (!ticking) {
         window.requestAnimationFrame(function() {
-            // do something here
+            checkSection(last_known_scroll_position);
             ticking = false;
         });
         ticking = true;
